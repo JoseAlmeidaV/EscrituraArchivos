@@ -35,6 +35,7 @@ namespace EscrituraArchivos
         static void Main(string[] args)
         {
             StreamWriter sw = new StreamWriter("ejemplo.txt", true);
+
             Console.Write("Coloque el nombre: ");
             string nombre = Console.ReadLine();
             Console.Write("Coloque el apellido parterno: ");
@@ -46,8 +47,17 @@ namespace EscrituraArchivos
             Console.WriteLine("coloque su edad: ");
             int edad = int.Parse(Console.ReadLine());
 
+            sw.WriteLine();
+            sw.WriteLine(nombre);
+            sw.WriteLine(apellido);
+            sw.WriteLine(estudios);
+            sw.WriteLine(universidad);
+            sw.WriteLine(edad);
+
+
             Persona P1 = new Persona(nombre, apellido, estudios, universidad, edad);
             P1.Resultados();
+
             sw.Close(); // siempre se debe cerrar el archivo
             Console.ReadKey();
         }
